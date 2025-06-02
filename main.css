@@ -1,3 +1,42 @@
+.top-bar {
+    width: 100%;
+    height: 60px;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.logo-link img {
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.logo-link img:hover {
+    transform: scale(1.05);
+}
+
+.profile-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4a9cff;
+    transition: transform 0.2s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Update the body to account for fixed top bar */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -6,6 +45,32 @@ body {
     height: 100vh;
     background-color: #121212;
     color: #e0e0e0;
+    padding-top: 0px; /* Add padding to prevent content from being hidden under top bar */
+    box-sizing: border-box;
+}
+
+/* Update sidebar positioning */
+.sidebar {
+    width: 220px;
+    background-color: #1e1e1e;
+    border-right: 1px solid #333;
+    padding: 20px 0;
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Adjust height to account for top bar */
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+/* Update content positioning */
+.content {
+    flex: 1;
+    padding: 20px 30px;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    margin-left: 220px; /* Account for sidebar width */
+    height: calc(100vh - 60px); /* Adjust height to account for top bar */
+    margin-top: 60px;
 }
 
 .sidebar {
@@ -144,10 +209,10 @@ select, input[type="text"], input[type="number"] {
 
 .winfetch-container {
     font-family: 'Cascadia Mono', monospace;
-    background-color: #1e1e1e;
+    background-color: #0c0c0c;
     padding: 20px;
     border-radius: 5px;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     gap: 20px;
