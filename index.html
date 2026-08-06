@@ -3,72 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avery's Website</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <title>Windows 11 UI Layout</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="top-bar">
-        <a href="https://pages.github.com/" class="logo-link" target="_blank">
-            <img src="https://pages.github.com/images/logo.svg" alt="Website Logo">
-        </a>
-        <a href="#" class="profile-link">
-            <img src="https://avatars.githubusercontent.com/u/124472904?s=400&u=c9936fb211ca0a06083247748628ff0aaecc07be&v=4" alt="Profile Picture" class="profile-pic">
-        </a>
-    </div>
 
-    <div class="sidebar">
-        <div class="sidebar-header">Main</div>
-        <a href="index.html" class="sidebar-item active">
-            <i></i>Website Info
-        </a>
-        <a href="social.html" class="sidebar-item">
-            <i></i> Social Links
-        </a>
-        <div class="sidebar-header">About me</div>
-        <a href="description.html" class="sidebar-item">
-            <i></i> Description
-        </a>
-        <a href="contributions.html" class="sidebar-item">
-            <i></i> Contributions
-        </a>
-        <a href="winfetch.html" class="sidebar-item">
-            <i></i> winfetch
-        </a>
-        <div class="sidebar-header">Projects</div>
-        <a href="github.html" class="sidebar-item">
-            <i></i>Github Repositories
-        </a>
-        <a href="plugins.html" class="sidebar-item">
-            <i></i> Roblox Studio Plugins
-        </a>
-        <a href="games.html" class="sidebar-item">
-            <i></i> Roblox Games
-        </a>
-        <a href="resources.html" class="sidebar-item">
-            <i></i> Resources
-        </a>
-    </div>
-    
-    <div class="content">
-        <div class="content-header">
-            <span>Website Info</span>
+<div class="win-app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <!-- Top Hamburger Menu -->
+        <div class="sidebar-header">
+            <button class="menu-btn" title="Toggle Navigation">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
         </div>
-        <hr>
-        <div class="pages-section">
-            <div class="section-title">Description</div>
-            <div class="page-item">
-                <div class="page-label">Hello! And welcome to my own website! This site was made using <a href="https://pages.github.com/">Github Pages</a>.</div>
-                <br>
-                <div class="page-label">This is where I show some of my contributions, my roblox games, some community resources I made and some of my past-time projects.</div>
-                <br>
-                <div class="page-label">I always wanted to have my own personal website to showcase all of my creations I've done for the past few years or so. I wasn't really bothered enough to make a website about myself until June 2nd, 2025... And with that, this website is born.</div>
-           </div>
+
+        <!-- Scrollable Navigation Items -->
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                        <polyline points="9 10 12 7 15 10"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Startup</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Interaction</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Appearance</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="13.5" cy="6.5" r=".5"/>
+                        <circle cx="17.5" cy="10.5" r=".5"/>
+                        <circle cx="8.5" cy="7.5" r=".5"/>
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.72 1.7-1.65 0-.43-.17-.83-.44-1.13-.27-.3-.43-.7-.43-1.13 0-.93.77-1.69 1.7-1.69h2.2c3.04 0 5.5-2.46 5.5-5.5C22 6.5 17.5 2 12 2z"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Color schemes</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M6 8h4v4H6z"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Rendering</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Compatibility</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="6" width="20" height="12" rx="2"/>
+                        <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Actions</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+        <h1 class="page-title">System</h1>
+
+        <div class="settings-group">
+            <div class="setting-row">
+                <div class="setting-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="setting-details">
+                    <div class="setting-title">Display</div>
+                    <div class="setting-description">Monitors, brightness, night light, display profile</div>
+                </div>
+                <div class="chevron">&#8250;</div>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </div>
+                <div class="setting-details">
+                    <div class="setting-title">Sound</div>
+                    <div class="setting-description">Volume levels, output, input, sound devices</div>
+                </div>
+                <div class="chevron">&#8250;</div>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                </div>
+                <div class="setting-details">
+                    <div class="setting-title">Notifications</div>
+                    <div class="setting-description">Alerts from apps and system, do not disturb</div>
+                </div>
+                <div class="chevron">&#8250;</div>
+            </div>
         </div>
-        <hr>
-        <div class="pages-section">
-            <div class="section-title">Getting Started</div>
-            <div class="page-label">To get started, click on one of the <b>tabs</b> on the sidebar.</div>
-        </div>
-    </div>
+    </main>
+
+</div>
+
 </body>
 </html>
