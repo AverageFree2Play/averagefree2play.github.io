@@ -4,10 +4,13 @@
     --sidebar-bg: #202020;
     --content-bg: #1c1c1c;
     --card-bg: #272727;
+    --card-sub-bg: #222222;
     --card-border: #333333;
     
     /* Accent & State Colors */
     --accent-blue: #60cdff;
+    --btn-bg: #323232;
+    --btn-hover: #3d3d3d;
     --item-hover: rgba(255, 255, 255, 0.06);
     --item-active: rgba(255, 255, 255, 0.09);
     
@@ -17,6 +20,7 @@
     
     /* Layout */
     --sidebar-width: 280px;
+    --sidebar-collapsed-width: 48px;
     --border-radius: 8px;
 }
 
@@ -35,7 +39,6 @@ body {
     overflow: hidden;
 }
 
-/* App Window Container */
 .win-app-container {
     display: flex;
     width: 100vw;
@@ -55,11 +58,16 @@ body {
     padding: 12px 8px;
     user-select: none;
     flex-shrink: 0;
+    transition: width 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
-/* Top Hamburger Menu */
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+    padding: 12px 4px;
+}
+
 .sidebar-header {
-    padding: 8px 12px 16px 12px;
+    padding: 0 4px 12px 4px;
 }
 
 .menu-btn {
@@ -67,48 +75,41 @@ body {
     border: none;
     color: var(--text-primary);
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 10px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 .menu-btn:hover {
     background-color: var(--item-hover);
 }
 
-/* Scrollable Nav List */
 .sidebar-nav {
     flex-grow: 1;
     overflow-y: auto;
-    padding-right: 4px;
+    overflow-x: hidden;
 }
 
-/* Custom Windows 11 Thin Scrollbar */
 .sidebar-nav::-webkit-scrollbar {
     width: 4px;
 }
-
 .sidebar-nav::-webkit-scrollbar-track {
     background: transparent;
 }
-
 .sidebar-nav::-webkit-scrollbar-thumb {
     background: #454545;
     border-radius: 4px;
 }
 
-.sidebar-nav::-webkit-scrollbar-thumb:hover {
-    background: #606060;
-}
-
-/* Nav Link Item */
 .nav-item {
     display: flex;
     align-items: center;
     height: 40px;
-    padding: 0 12px;
+    padding: 0 10px;
     margin-bottom: 2px;
     border-radius: 4px;
     color: var(--text-primary);
@@ -116,24 +117,18 @@ body {
     font-size: 14px;
     font-weight: 400;
     position: relative;
+    white-space: nowrap;
     transition: background-color 0.1s ease;
 }
 
-.nav-item:hover {
-    background-color: var(--item-hover);
-}
+.nav-item:hover { background-color: var(--item-hover); }
+.nav-item:active { background-color: var(--item-active); }
 
-.nav-item:active {
-    background-color: var(--item-active);
-}
-
-/* Active State Styles */
 .nav-item.active {
     background-color: var(--item-active);
     font-weight: 600;
 }
 
-/* Active Left Pill Accent */
 .nav-item.active::before {
     content: '';
     position: absolute;
@@ -145,24 +140,46 @@ body {
     border-radius: 2px;
 }
 
-.nav-icon {
+/* Icon Container & Image Sizing */
+.nav-icon, .setting-icon, .btn-icon {
     width: 20px;
     height: 20px;
-    margin-right: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
+.nav-icon {
+    margin-right: 16px;
+    transition: margin 0.2s ease;
+}
+
+.setting-icon {
+    margin-right: 16px;
+}
+
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sidebar.collapsed .nav-label {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.collapsed .nav-icon {
+    margin-right: 0;
+}
+
 .nav-label {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    transition: opacity 0.15s ease;
 }
 
 /* ---------------------------------- */
-/* Main Content Styles                */
+/* Main Content & Expandable Cards    */
 /* ---------------------------------- */
 
 .main-content {
@@ -181,7 +198,6 @@ body {
     margin: 0 0 20px 0;
 }
 
-/* Settings Cards Container */
 .settings-group {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -190,26 +206,25 @@ body {
     overflow: hidden;
 }
 
+.expandable-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.expandable-item:last-child {
+    border-bottom: none;
+}
+
 .setting-row {
     display: flex;
     align-items: center;
     padding: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     cursor: pointer;
+    user-select: none;
     transition: background-color 0.1s ease;
-}
-
-.setting-row:last-child {
-    border-bottom: none;
 }
 
 .setting-row:hover {
     background-color: var(--item-hover);
-}
-
-.setting-icon {
-    margin-right: 16px;
-    color: var(--accent-blue);
 }
 
 .setting-details {
@@ -228,6 +243,102 @@ body {
 }
 
 .chevron {
-    color: var(--text-secondary);
-    font-size: 18px;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.expandable-item.open .chevron {
+    transform: rotate(180deg);
+}
+
+.sub-menu {
+    display: none;
+    background-color: var(--card-sub-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.expandable-item.open .sub-menu {
+    display: block;
+}
+
+.sub-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sub-row:last-child {
+    border-bottom: none;
+}
+
+.sub-row-label {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    flex-grow: 1;
+}
+
+/* ---------------------------------- */
+/* Windows 11 Form Controls          */
+/* ---------------------------------- */
+
+.win-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.win-checkbox {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: all 0.1s ease;
+}
+
+.win-checkbox:checked {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.win-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid #000000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45px);
+}
+
+.win-btn {
+    background-color: var(--btn-bg);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.win-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.win-btn:active {
+    background-color: rgba(255, 255, 255, 0.04);
 }

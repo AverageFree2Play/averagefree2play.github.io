@@ -11,145 +11,175 @@
 <div class="win-app-container">
 
     <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <!-- Top Hamburger Menu -->
+    <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <button class="menu-btn" title="Toggle Navigation">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <line x1="3" y1="12" x2="21" y2="12"/>
-                    <line x1="3" y1="18" x2="21" y2="18"/>
-                </svg>
+            <button class="menu-btn" id="toggle-btn" title="Navigation Menu">
+                <img src="icons/hamburger.svg" alt="Menu" class="icon-img">
             </button>
         </div>
 
-        <!-- Scrollable Navigation Items -->
         <nav class="sidebar-nav">
-            <a href="#" class="nav-item active">
+            <a href="#" class="nav-item active" title="Home">
                 <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
-                        <polyline points="9 10 12 7 15 10"/>
-                    </svg>
+                    <img src="icons/home.svg" alt="Home" class="icon-img">
                 </span>
-                <span class="nav-label">Startup</span>
+                <span class="nav-label">Home</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="#" class="nav-item" title="Bluetooth & devices">
                 <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                    </svg>
+                    <img src="icons/bluetooth.svg" alt="Bluetooth" class="icon-img">
                 </span>
-                <span class="nav-label">Interaction</span>
+                <span class="nav-label">Bluetooth & devices</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="#" class="nav-item" title="Network & internet">
                 <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                    </svg>
+                    <img src="icons/network.svg" alt="Network" class="icon-img">
                 </span>
-                <span class="nav-label">Appearance</span>
+                <span class="nav-label">Network & internet</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="#" class="nav-item" title="Personalization">
                 <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="13.5" cy="6.5" r=".5"/>
-                        <circle cx="17.5" cy="10.5" r=".5"/>
-                        <circle cx="8.5" cy="7.5" r=".5"/>
-                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.72 1.7-1.65 0-.43-.17-.83-.44-1.13-.27-.3-.43-.7-.43-1.13 0-.93.77-1.69 1.7-1.69h2.2c3.04 0 5.5-2.46 5.5-5.5C22 6.5 17.5 2 12 2z"/>
-                    </svg>
+                    <img src="icons/personalization.svg" alt="Personalization" class="icon-img">
                 </span>
-                <span class="nav-label">Color schemes</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="M6 8h4v4H6z"/>
-                    </svg>
-                </span>
-                <span class="nav-label">Rendering</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                    </svg>
-                </span>
-                <span class="nav-label">Compatibility</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="6" width="20" height="12" rx="2"/>
-                        <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/>
-                    </svg>
-                </span>
-                <span class="nav-label">Actions</span>
+                <span class="nav-label">Personalization</span>
             </a>
         </nav>
     </aside>
 
     <!-- Main Content Panel -->
     <main class="main-content">
-        <h1 class="page-title">System</h1>
+        <h1 class="page-title">Home</h1>
 
         <div class="settings-group">
-            <div class="setting-row">
-                <div class="setting-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
-                    </svg>
+            
+            <!-- Expandable Item 1: Display -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/display.svg" alt="Display" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Display</div>
+                        <div class="setting-description">Monitors, brightness, night light, display profile</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
                 </div>
-                <div class="setting-details">
-                    <div class="setting-title">Display</div>
-                    <div class="setting-description">Monitors, brightness, night light, display profile</div>
+
+                <!-- Expanded Sub-Menu -->
+                <div class="sub-menu">
+                    <div class="sub-row" style="background-color: rgba(255,255,255,0.02); padding-top: 16px; padding-bottom: 16px;">
+                        <div class="setting-icon">
+                            <img src="icons/multiple-displays.svg" alt="Multiple displays" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Multiple displays</div>
+                            <div class="setting-description">Choose the presentation mode for your displays</div>
+                        </div>
+                    </div>
+
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Remember window locations based on monitor connection</span>
+                        </label>
+                    </div>
+
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Minimize windows when a monitor is disconnected</span>
+                        </label>
+                    </div>
+
+                    <div class="sub-row">
+                        <span class="sub-row-label">Detect other display</span>
+                        <button class="win-btn">Detect</button>
+                    </div>
+
+                    <div class="sub-row">
+                        <span class="sub-row-label">Connect to a wireless display</span>
+                        <button class="win-btn">Connect</button>
+                    </div>
                 </div>
-                <div class="chevron">&#8250;</div>
             </div>
 
-            <div class="setting-row">
-                <div class="setting-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                    </svg>
+            <!-- Expandable Item 2: Sound -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/sound.svg" alt="Sound" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Sound</div>
+                        <div class="setting-description">Volume levels, output, input, sound devices</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
                 </div>
-                <div class="setting-details">
-                    <div class="setting-title">Sound</div>
-                    <div class="setting-description">Volume levels, output, input, sound devices</div>
+
+                <div class="sub-menu">
+                    <div class="sub-row">
+                        <span class="sub-row-label">Output devices</span>
+                        <button class="win-btn">Add device</button>
+                    </div>
                 </div>
-                <div class="chevron">&#8250;</div>
             </div>
 
-            <div class="setting-row">
-                <div class="setting-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                    </svg>
+            <!-- Expandable Item 3: Notifications -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/notifications.svg" alt="Notifications" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Notifications</div>
+                        <div class="setting-description">Alerts from apps and system, do not disturb</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
                 </div>
-                <div class="setting-details">
-                    <div class="setting-title">Notifications</div>
-                    <div class="setting-description">Alerts from apps and system, do not disturb</div>
+
+                <div class="sub-menu">
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Get notifications from apps and other senders</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="chevron">&#8250;</div>
             </div>
+
         </div>
     </main>
 
 </div>
+
+<script>
+    // Sidebar Collapse Logic
+    const toggleBtn = document.getElementById('toggle-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+
+    // Expandable Menu Logic
+    const triggers = document.querySelectorAll('.js-expand-trigger');
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const parentItem = trigger.closest('.expandable-item');
+            parentItem.classList.toggle('open');
+        });
+    });
+</script>
 
 </body>
 </html>
