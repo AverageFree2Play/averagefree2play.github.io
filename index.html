@@ -35,13 +35,6 @@
                 <span class="nav-label">About</span>
             </button>
 
-            <button class="nav-item" onclick="switchTab('faq')" title="FAQ">
-                <span class="nav-icon">
-                    <img src="icons/question.svg" alt="FAQ" class="icon-img">
-                </span>
-                <span class="nav-label">FAQ</span>
-            </button>
-
             <button class="nav-item" onclick="switchTab('contact')" title="Contact">
                 <span class="nav-icon">
                     <img src="icons/chat.svg" alt="Contact" class="icon-img">
@@ -144,10 +137,187 @@
         </div>
         <div id="section-about" class="tab-content" style="display: none;">
             <h1 class="page-title">About</h1>
-            <p>This is the About section.</p>
+            <div class="settings-group">
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/info.svg" alt="About" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">This Site</div>
+                            <div class="setting-description">Learn more about the purpose and goals of this website.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">Purpose</div>
+                                <div class="setting-description">This website is a personal project created by me. It serves as a platform to share my work, ideas, and resources with the community. The site is built using HTML, CSS, and JavaScript, and is designed to be responsive and user-friendly.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/user-question.svg" alt="About Me" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">About Me</div>
+                            <div class="setting-description">Learn more about the creator of this website.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">Overview</div>
+                                <div class="setting-description">Names Avery, but you can call me Ave (for short). Been working on Roblox's programming language <a href="https://luau.org/" target="_blank">Luau</a> since somewhere around 2020. To the point I'm good enough to create my own massive-scale project. Though I also work on other side projects for the sake of learning and experimentation.</div>
+                                <div class="setting-description">Some other things I'm pretty invested in is sound-editing and lore-building. I'd consider myself a bit "okay" at both, but I find myself to be best at coding.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/asset.svg" alt="My Work" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">My Work</div>
+                            <div class="setting-description">Learn more about the projects and work I've done.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">Projects</div>
+                                <div class="setting-description">I have worked on various projects, some are definitely helpful in some way, others are just my small apps that you can goof around with. Some of my notable projects include:</div>
+                                <ul>
+                                    <li><a href="https://github.com/AverageFree2Play/SpookSounds" target="_blank">SpookSounds</a> - A .net console application that emulates the old "spooky" sounds played in the background of old horror games.</li>
+                                    <li><a href="https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI" target="_blank">Old Ribbon Style UI for Next Gen Studio Ribbon UI Update</a> - A set of json files that emulates the old ribbon UI from Roblox Studio prior to the next-gen update.</li>
+                                    <li><a href="https://devforum.roblox.com/t/source-engine-vc/3773868" target="_blank">Source Engine VC for Roblox</a> - A free model that replicates the Source Engine's voice chat system (most notably used in Counter-Strike and/or Garry's Mod) for Roblox.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/chat.svg" alt="QNA" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Questions & Answers</div>
+                            <div class="setting-description">Inevitably, people will ask questions, so I want to get a few out of the way that I think would be the most common, so you already have an answer, in no particular order.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">Do you accept friend requests on various platforms?</div>
+                                <div class="setting-description">Not really. If you see me randomly accepting for no particular reason, it's likely either a mistake, curiosity, or a resolving a certain issue.</div>
+                                <div class="setting-description">I prefer to know the person before adding them as a friend. This usually involves interacting with them in some capacity first. I'm not gonna accept your friend request if you just send it and didn't say anything.</div>
+                                <br>
+                                <div class="setting-title">Can I get you to do something for me in terms of work?</div>
+                                <div class="setting-description">I don't really do work for people. I have my own projects that I work on, and I don't really have the time to do work for other people. If you want to hire me for something, you can contact me and we can discuss it.</div>
+                                <br>
+                                <div class="setting-title">Can you teach me how to code?</div>
+                                <div class="setting-description">As long as it's within my scope, I can help you learn to code! I'm always happy to share my knowledge and experience with those who are interested in learning. However, keep in mind that I don't offer formal tutoring or teaching services.</div>
+                                <div class="setting-description">Though anything that I'm not aware of you may need to ask someone else or look into official documentation.</div>
+                                <br>
+                                <div class="setting-title">Can I use your work for my own project?</div>
+                                <div class="setting-description">Yes, you can use my work for your own project, as long as you give me credit for it. You can also modify my work to fit your needs, but please don't claim it as your own.</div>
+                                <div class="setting-description">All my open-source projects are licensed under the MIT License and CC BY-SA 4.0.</div>
+                                <br>
+                                <div class="setting-title">Do you take commissions or payments for your work?</div>
+                                <div class="setting-description">I don't typically take commissions or payments for my work. I create projects for fun and to share with the community. However, If something is part of a larger project or collaboration, I'd prefer if you'd pay for it.</div>
+                                <br>
+                                <div class="setting-title">Do you make videos?</div>
+                                <div class="setting-description">If you already saw my youtube channel then, I don't usually make videos. All my videos are either gameplay footage, showcases and other random content.</div>
+                                <br>
+                                <div class="setting-title">That's all of the questions I can think of for now. If you have a particular question that doesn't fell in any of the categories above, you can contact me.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-contact" class="tab-content" style="display: none;">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-description">If you want to know even more about me, feel free to reach out!</p>
+            <div class="settings-group">
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/chat.svg" alt="Contact" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Frequently Active Platforms</div>
+                            <div class="setting-description">These are the platforms where you can find me most often</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-row">
+                                    <div class="setting-icon">
+                                        <img src="icons/discord.svg" alt="Discord" class="icon-img">
+                                    </div>
+                                    <div class="setting-details">
+                                        <div class="setting-title">Discord</div>
+                                        <div class="setting-description">You can find me on Discord as <strong>@average_free2play</strong>. If you're planning on adding me, please state your purpose.</div>
+                                    </div>
+                                </div>
+                                <div class="setting-row" onclick="window.open('https://www.youtube.com/@AverageTheTakenF2P', '_blank', 'noopener,noreferrer')">
+                                    <div class="setting-icon">
+                                        <img src="icons/youtube.svg" alt="Youtube" class="icon-img">
+                                    </div>
+                                    <div class="setting-details">
+                                        <div class="setting-title">Youtube</div>
+                                        <div class="setting-description">You can find me on Youtube as <strong>@AverageTheTakenF2P</strong></div>
+                                    </div>
+                                    <div class="chevron">
+                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                                    </div>
+                                </div>
+                                <div class="setting-row" onclick="window.open('https://x.com/Circumfraction', '_blank', 'noopener,noreferrer')">
+                                    <div class="setting-icon">
+                                        <img src="icons/twitter.svg" alt="Twitter" class="icon-img">
+                                    </div>
+                                    <div class="setting-details">
+                                        <div class="setting-title">Twitter</div>
+                                        <div class="setting-description">You can find me on Twitter as <strong>@Circumfraction</strong> (yes I'm calling it Twitter instead of X)</div>
+                                    </div>
+                                    <div class="chevron">
+                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- <footer class="footer">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer> -->
 </div>
 
 <script>
