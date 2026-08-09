@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 11 UI Layout</title>
+    <title>My Website - Home</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="icons/favicon.png">
+    <script src="js/ui.js" defer></script>
 </head>
 <body>
 
@@ -26,25 +28,32 @@
                 <span class="nav-label">Home</span>
             </a>
 
-            <a href="#" class="nav-item" title="Bluetooth & devices">
+            <a href="#" class="nav-item" title="About">
                 <span class="nav-icon">
-                    <img src="icons/bluetooth.svg" alt="Bluetooth" class="icon-img">
+                    <img src="icons/info.svg" alt="About" class="icon-img">
                 </span>
-                <span class="nav-label">Bluetooth & devices</span>
+                <span class="nav-label">About</span>
             </a>
 
-            <a href="#" class="nav-item" title="Network & internet">
+            <a href="#" class="nav-item" title="FAQ">
                 <span class="nav-icon">
-                    <img src="icons/network.svg" alt="Network" class="icon-img">
+                    <img src="icons/question.svg" alt="FAQ" class="icon-img">
                 </span>
-                <span class="nav-label">Network & internet</span>
+                <span class="nav-label">FAQ</span>
             </a>
 
-            <a href="#" class="nav-item" title="Personalization">
+            <a href="#" class="nav-item" title="Contact">
                 <span class="nav-icon">
-                    <img src="icons/personalization.svg" alt="Personalization" class="icon-img">
+                    <img src="icons/chat.svg" alt="Contact" class="icon-img">
                 </span>
-                <span class="nav-label">Personalization</span>
+                <span class="nav-label">Contact</span>
+            </a>
+
+            <a href="#" class="nav-item" title="Extras">
+                <span class="nav-icon">
+                    <img src="icons/script.svg" alt="Extras" class="icon-img">
+                </span>
+                <span class="nav-label">Extras</span>
             </a>
         </nav>
     </aside>
@@ -52,133 +61,35 @@
     <!-- Main Content Panel -->
     <main class="main-content">
         <h1 class="page-title">Home</h1>
-
         <div class="settings-group">
-            
-            <!-- Expandable Item 1: Display -->
             <div class="expandable-item">
                 <div class="setting-row js-expand-trigger">
                     <div class="setting-icon">
-                        <img src="icons/display.svg" alt="Display" class="icon-img">
+                        <img src="icons/question.svg" alt="Help" class="icon-img">
                     </div>
                     <div class="setting-details">
-                        <div class="setting-title">Display</div>
-                        <div class="setting-description">Monitors, brightness, night light, display profile</div>
+                        <div class="setting-title">Help</div>
+                        <div class="setting-description">Don't know what to do? Click me!</div>
                     </div>
                     <div class="chevron">
-                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
                     </div>
                 </div>
-
-                <!-- Expanded Sub-Menu -->
                 <div class="sub-menu">
-                    <div class="sub-row" style="background-color: rgba(255,255,255,0.02); padding-top: 16px; padding-bottom: 16px;">
-                        <div class="setting-icon">
-                            <img src="icons/multiple-displays.svg" alt="Multiple displays" class="icon-img">
-                        </div>
+                    <div class="sub-row">
                         <div class="setting-details">
-                            <div class="setting-title">Multiple displays</div>
-                            <div class="setting-description">Choose the presentation mode for your displays</div>
+                            <div class="setting-title">Welcome to my site!</div>
+                            <div class="setting-description">To get started, click the hamburger menu on the top left to reveal the navigation menu. From there, you can navigate to different sections of the site.</div>
                         </div>
                     </div>
-
-                    <div class="sub-row">
-                        <label class="win-checkbox-label">
-                            <input type="checkbox" class="win-checkbox" checked>
-                            <span class="sub-row-label">Remember window locations based on monitor connection</span>
-                        </label>
-                    </div>
-
-                    <div class="sub-row">
-                        <label class="win-checkbox-label">
-                            <input type="checkbox" class="win-checkbox" checked>
-                            <span class="sub-row-label">Minimize windows when a monitor is disconnected</span>
-                        </label>
-                    </div>
-
-                    <div class="sub-row">
-                        <span class="sub-row-label">Detect other display</span>
-                        <button class="win-btn">Detect</button>
-                    </div>
-
-                    <div class="sub-row">
-                        <span class="sub-row-label">Connect to a wireless display</span>
-                        <button class="win-btn">Connect</button>
-                    </div>
                 </div>
             </div>
-
-            <!-- Expandable Item 2: Sound -->
-            <div class="expandable-item">
-                <div class="setting-row js-expand-trigger">
-                    <div class="setting-icon">
-                        <img src="icons/sound.svg" alt="Sound" class="icon-img">
-                    </div>
-                    <div class="setting-details">
-                        <div class="setting-title">Sound</div>
-                        <div class="setting-description">Volume levels, output, input, sound devices</div>
-                    </div>
-                    <div class="chevron">
-                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
-                    </div>
-                </div>
-
-                <div class="sub-menu">
-                    <div class="sub-row">
-                        <span class="sub-row-label">Output devices</span>
-                        <button class="win-btn">Add device</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Expandable Item 3: Notifications -->
-            <div class="expandable-item">
-                <div class="setting-row js-expand-trigger">
-                    <div class="setting-icon">
-                        <img src="icons/notifications.svg" alt="Notifications" class="icon-img">
-                    </div>
-                    <div class="setting-details">
-                        <div class="setting-title">Notifications</div>
-                        <div class="setting-description">Alerts from apps and system, do not disturb</div>
-                    </div>
-                    <div class="chevron">
-                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
-                    </div>
-                </div>
-
-                <div class="sub-menu">
-                    <div class="sub-row">
-                        <label class="win-checkbox-label">
-                            <input type="checkbox" class="win-checkbox" checked>
-                            <span class="sub-row-label">Get notifications from apps and other senders</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
 </div>
 
 <script>
-    // Sidebar Collapse Logic
-    const toggleBtn = document.getElementById('toggle-btn');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-    });
-
-    // Expandable Menu Logic
-    const triggers = document.querySelectorAll('.js-expand-trigger');
-
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const parentItem = trigger.closest('.expandable-item');
-            parentItem.classList.toggle('open');
-        });
-    });
 </script>
 
 </body>

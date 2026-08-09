@@ -1,0 +1,104 @@
+<div class="settings-group">
+            
+            <!-- Expandable Item 1: Display -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/display.svg" alt="Display" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Display</div>
+                        <div class="setting-description">Monitors, brightness, night light, display profile</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
+                </div>
+
+                <!-- Expanded Sub-Menu -->
+                <div class="sub-menu">
+                    <div class="sub-row" style="background-color: rgba(255,255,255,0.02); padding-top: 16px; padding-bottom: 16px;">
+                        <div class="setting-icon">
+                            <img src="icons/multiple-displays.svg" alt="Multiple displays" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Multiple displays</div>
+                            <div class="setting-description">Choose the presentation mode for your displays</div>
+                        </div>
+                    </div>
+
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Remember window locations based on monitor connection</span>
+                        </label>
+                    </div>
+
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Minimize windows when a monitor is disconnected</span>
+                        </label>
+                    </div>
+
+                    <div class="sub-row">
+                        <span class="sub-row-label">Detect other display</span>
+                        <button class="win-btn">Detect</button>
+                    </div>
+
+                    <div class="sub-row">
+                        <span class="sub-row-label">Connect to a wireless display</span>
+                        <button class="win-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable Item 2: Sound -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/sound.svg" alt="Sound" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Sound</div>
+                        <div class="setting-description">Volume levels, output, input, sound devices</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
+                </div>
+
+                <div class="sub-menu">
+                    <div class="sub-row">
+                        <span class="sub-row-label">Output devices</span>
+                        <button class="win-btn">Add device</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable Item 3: Notifications -->
+            <div class="expandable-item">
+                <div class="setting-row js-expand-trigger">
+                    <div class="setting-icon">
+                        <img src="icons/notifications.svg" alt="Notifications" class="icon-img">
+                    </div>
+                    <div class="setting-details">
+                        <div class="setting-title">Notifications</div>
+                        <div class="setting-description">Alerts from apps and system, do not disturb</div>
+                    </div>
+                    <div class="chevron">
+                        <img src="icons/chevron-down.svg" alt="Expand" class="icon-img">
+                    </div>
+                </div>
+
+                <div class="sub-menu">
+                    <div class="sub-row">
+                        <label class="win-checkbox-label">
+                            <input type="checkbox" class="win-checkbox" checked>
+                            <span class="sub-row-label">Get notifications from apps and other senders</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
