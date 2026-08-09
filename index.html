@@ -21,75 +21,145 @@
         </div>
 
         <nav class="sidebar-nav">
-            <a href="#" class="nav-item active" title="Home">
+            <button class="nav-item active" onclick="switchTab('home')" title="Home">
                 <span class="nav-icon">
                     <img src="icons/home.svg" alt="Home" class="icon-img">
                 </span>
                 <span class="nav-label">Home</span>
-            </a>
+            </button>
 
-            <a href="#" class="nav-item" title="About">
+            <button class="nav-item" onclick="switchTab('about')" title="About">
                 <span class="nav-icon">
                     <img src="icons/info.svg" alt="About" class="icon-img">
                 </span>
                 <span class="nav-label">About</span>
-            </a>
+            </button>
 
-            <a href="#" class="nav-item" title="FAQ">
+            <button class="nav-item" onclick="switchTab('faq')" title="FAQ">
                 <span class="nav-icon">
                     <img src="icons/question.svg" alt="FAQ" class="icon-img">
                 </span>
                 <span class="nav-label">FAQ</span>
-            </a>
+            </button>
 
-            <a href="#" class="nav-item" title="Contact">
+            <button class="nav-item" onclick="switchTab('contact')" title="Contact">
                 <span class="nav-icon">
                     <img src="icons/chat.svg" alt="Contact" class="icon-img">
                 </span>
                 <span class="nav-label">Contact</span>
-            </a>
+            </button>
 
-            <a href="#" class="nav-item" title="Extras">
+            <button class="nav-item" onclick="switchTab('resources')" title="Resources">
+                <span class="nav-icon">
+                    <img src="icons/asset.svg" alt="Resources" class="icon-img">
+                </span>
+                <span class="nav-label">Resources</span>
+            </button>
+
+            <button class="nav-item" onclick="switchTab('extras')" title="Extras">
                 <span class="nav-icon">
                     <img src="icons/script.svg" alt="Extras" class="icon-img">
                 </span>
                 <span class="nav-label">Extras</span>
-            </a>
+            </button>
         </nav>
     </aside>
 
     <!-- Main Content Panel -->
     <main class="main-content">
-        <h1 class="page-title">Home</h1>
-        <div class="settings-group">
-            <div class="expandable-item">
-                <div class="setting-row js-expand-trigger">
-                    <div class="setting-icon">
-                        <img src="icons/question.svg" alt="Help" class="icon-img">
-                    </div>
-                    <div class="setting-details">
-                        <div class="setting-title">Help</div>
-                        <div class="setting-description">Don't know what to do? Click me!</div>
-                    </div>
-                    <div class="chevron">
-                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                    </div>
-                </div>
-                <div class="sub-menu">
-                    <div class="sub-row">
+        <div id="section-home" class="tab-content active" style="display: block;">
+            <h1 class="page-title">Home</h1>
+            <div class="settings-group">
+                <!-- Help Button -->
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/question.svg" alt="Help" class="icon-img">
+                        </div>
                         <div class="setting-details">
-                            <div class="setting-title">Welcome to my site!</div>
-                            <div class="setting-description">To get started, click the hamburger menu on the top left to reveal the navigation menu. From there, you can navigate to different sections of the site.</div>
+                            <div class="setting-title">Help</div>
+                            <div class="setting-description">Don't know what to do? Click me!</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">Welcome to my site!</div>
+                                <div class="setting-description">To get started, click the hamburger menu on the top left to reveal the navigation menu. From there, you can navigate to different sections of the site.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Source Button -->
+                <div onclick="window.open('https://github.com/AverageFree2Play/averagefree2play.github.io', '_blank', 'noopener,noreferrer')" class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/code.svg" alt="Source" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Source</div>
+                            <div class="setting-description">View the source code of this site.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>  
+                    </div>
+                </div>
+                <!-- Credits Button -->
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/notepad.svg" alt="Credits" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Credits</div>
+                            <div class="setting-description">Learn more about how I created this site.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <div class="setting-details">
+                                <div class="setting-title">
+                                    <a href="https://www.svgrepo.com/" target="_blank" rel="noopener noreferrer">SVG Repo</a> - For the icons used on this site.<br>
+                                    <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">Flaticon</a> - For the icons used on this site.<br>
+                                    <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a> - For the tutorials and references used to learn web development.<br>
+                                    <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C</a> - For the standards and specifications used to learn web development.<br>
+                                    <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a> - For the tutorials and references used to learn web development.<br>
+                                    <a href="https://www.coursera.org/specializations/web-design" target="_blank" rel="noopener noreferrer">Coursera Web Design Specialization</a> - For the courses used to learn web development.<br>
+                                    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> - For the code editor used to write the code for this site.<br>
+                                    <a href="https://www.github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> - For hosting the source code of this site.<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+        <div id="section-about" class="tab-content" style="display: none;">
+            <h1 class="page-title">About</h1>
+            <p>This is the About section.</p>
         </div>
     </main>
 
 </div>
 
 <script>
+    function switchTab(tabId) {
+        // Hide all content sections
+        document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+        // Show the selected section
+        document.getElementById('section-' + tabId).style.display = 'block';
+        // Make the tab selector active
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        document.querySelector('.nav-item[onclick="switchTab(\'' + tabId + '\')"]').classList.add('active');
+    }
 </script>
 
 </body>

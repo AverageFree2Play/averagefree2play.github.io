@@ -53,12 +53,22 @@ body {
 .sidebar {
     width: var(--sidebar-width);
     background-color: var(--sidebar-bg);
-    display: flex;
+    display: flex;  
     flex-direction: column;
     padding: 12px 8px;
     user-select: none;
     flex-shrink: 0;
     transition: width 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Ensures items stretch full width inside the nav container */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .sidebar.collapsed {
@@ -106,9 +116,18 @@ body {
 }
 
 .nav-item {
+    /* Add these to strip default button styling: */
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    
+    /* ... keep your existing styles below ... */
+    
     display: flex;
     align-items: center;
     height: 40px;
+    width: 100%;
     padding: 0 10px;
     margin-bottom: 2px;
     border-radius: 4px;
@@ -118,10 +137,46 @@ body {
     font-weight: 400;
     position: relative;
     white-space: nowrap;
-    transition: background-color 0.1s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.nav-item:hover { background-color: var(--item-hover); }
+/* Hover Highlight State */
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.08); /* Windows 11 subtle white fill on hover */
+    outline: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border highlight */
+}
+
+/* Active Click / Pressed Highlight State */
+.nav-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(0.98); /* Slight micro-press effect like modern Win UI */
+    transition: transform 0.05s ease;
+}
+
+/* Selected / Active State */
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.08);
+    font-weight: 600;
+}
+
+/* Hovering over active tab keeps a strong highlight */
+.nav-item.active:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Active Left Pill Accent (Windows 11 Accent Bar) */
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+}
+
+/* .nav-item:hover { background-color: var(--item-hover); }
 .nav-item:active { background-color: var(--item-active); }
 
 .nav-item.active {
@@ -138,7 +193,7 @@ body {
     width: 3px;
     background-color: var(--accent-blue);
     border-radius: 2px;
-}
+} */
 
 /* Icon Container & Image Sizing */
 .nav-icon, .setting-icon, .btn-icon {
