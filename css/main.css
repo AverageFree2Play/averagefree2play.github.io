@@ -244,7 +244,13 @@ body {
     border-radius: var(--border-radius);
     border: 1px solid var(--card-border);
     overflow-y: auto;
-    padding: 24px 32px;
+    padding: 24px 32px 0 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-body {
+    flex-grow: 1; /* Pushes the footer to the bottom */
 }
 
 .page-title {
@@ -358,7 +364,40 @@ body {
 .sub-row-clickable:active {
     background-color: rgba(255, 255, 255, 0.03);
 }
+/* ---------------------------------- */
+/* Sticky Windows 11 Footer           */
+/* ---------------------------------- */
 
+.win-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--content-bg); /* Matches main panel color */
+    border-top: 1px solid var(--card-border);
+    padding: 16px 0;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+/* Footer links styling */
+.win-footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.win-footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.win-footer-link:hover {
+    color: var(--accent-blue);
+}
 /* ---------------------------------- */
 /* Windows 11 Form Controls          */
 /* ---------------------------------- */

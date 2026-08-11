@@ -29,7 +29,7 @@ function closeMobileSidebar() {
 
 function switchTab(tabId) {
     // Hide all content sections
-    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.content-body').forEach(el => el.style.display = 'none');
     // Show the selected section
     document.getElementById('section-' + tabId).style.display = 'block';
     // Make the tab selector active
