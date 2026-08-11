@@ -102,3 +102,32 @@
             </div>
 
         </div>
+
+<div class="expandable-item">
+    <div class="setting-row js-expand-trigger">
+        <div class="setting-icon">
+            <img src="icons/asset.svg" alt="My Work" class="icon-img">
+        </div>
+        <div class="setting-details">
+            <div class="setting-title">My Work</div>
+            <div class="setting-description">Learn more about the projects and work I've done.</div>
+        </div>
+        <div class="chevron">
+            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+        </div>
+    </div>
+    <div class="sub-menu">
+        <div class="sub-row">
+            <div class="setting-details">
+                <div class="setting-title">Projects</div>
+                <div class="setting-description">I have worked on various projects, some are definitely helpful in some way, others are just my small apps that you can goof around with. Some of my notable projects include:</div>
+                <ul>
+                    <li><a href="https://github.com/AverageFree2Play/SpookSounds" target="_blank">SpookSounds</a> - A .net console application that emulates the old "spooky" sounds played in the background of old horror games.</li>
+                    <li><a href="https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI" target="_blank">Old Ribbon Style UI for Next Gen Studio Ribbon UI Update</a> - A set of json files that emulates the old ribbon UI from Roblox Studio prior to the next-gen update.</li>
+                    <li><a href="https://devforum.roblox.com/t/source-engine-vc/3773868" target="_blank">Source Engine VC for Roblox</a> - A free model that replicates the Source Engine's voice chat system (most notably used in Counter-Strike and/or Garry's Mod) for Roblox.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+  

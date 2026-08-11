@@ -6,16 +6,24 @@
     <title>My Website - Home</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="icons/favicon.png">
-    <script src="js/ui.js" defer></script>
+    <!-- <script src="js/ui.js" defer></script> -->
 </head>
 <body>
 
 <div class="win-app-container">
+    <!-- Mobile Top Header Bar (Only visible on mobile when sidebar is closed) -->
+    <div class="mobile-header-bar">
+        <button class="menu-btn js-toggle-btn" title="Open Navigation Menu">
+            <img src="icons/hamburger.svg" alt="Menu" class="icon-img">
+        </button>
+    </div>
+    <!-- Mobile Dimming Backdrop -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <button class="menu-btn" id="toggle-btn" title="Navigation Menu">
+            <button class="menu-btn js-toggle-btn" title="Navigation Menu">
                 <img src="icons/hamburger.svg" alt="Menu" class="icon-img">
             </button>
         </div>
@@ -46,15 +54,15 @@
                 <span class="nav-icon">
                     <img src="icons/asset.svg" alt="Resources" class="icon-img">
                 </span>
-                <span class="nav-label">Resources</span>
+                <span class="nav-label">Projects</span>
             </button>
 
-            <button class="nav-item" onclick="switchTab('extras')" title="Extras">
+            <!-- <button class="nav-item" onclick="switchTab('extras')" title="Extras">
                 <span class="nav-icon">
                     <img src="icons/script.svg" alt="Extras" class="icon-img">
                 </span>
                 <span class="nav-label">Extras</span>
-            </button>
+            </button> -->
         </nav>
     </aside>
 
@@ -96,9 +104,9 @@
                             <div class="setting-title">Source</div>
                             <div class="setting-description">View the source code of this site.</div>
                         </div>
-                        <div class="chevron">
-                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                        </div>  
+                        <div class="chevron-right">
+                            <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                        </div>
                     </div>
                 </div>
                 <!-- Credits Button -->
@@ -186,38 +194,11 @@
                 <div class="expandable-item">
                     <div class="setting-row js-expand-trigger">
                         <div class="setting-icon">
-                            <img src="icons/asset.svg" alt="My Work" class="icon-img">
-                        </div>
-                        <div class="setting-details">
-                            <div class="setting-title">My Work</div>
-                            <div class="setting-description">Learn more about the projects and work I've done.</div>
-                        </div>
-                        <div class="chevron">
-                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                        </div>
-                    </div>
-                    <div class="sub-menu">
-                        <div class="sub-row">
-                            <div class="setting-details">
-                                <div class="setting-title">Projects</div>
-                                <div class="setting-description">I have worked on various projects, some are definitely helpful in some way, others are just my small apps that you can goof around with. Some of my notable projects include:</div>
-                                <ul>
-                                    <li><a href="https://github.com/AverageFree2Play/SpookSounds" target="_blank">SpookSounds</a> - A .net console application that emulates the old "spooky" sounds played in the background of old horror games.</li>
-                                    <li><a href="https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI" target="_blank">Old Ribbon Style UI for Next Gen Studio Ribbon UI Update</a> - A set of json files that emulates the old ribbon UI from Roblox Studio prior to the next-gen update.</li>
-                                    <li><a href="https://devforum.roblox.com/t/source-engine-vc/3773868" target="_blank">Source Engine VC for Roblox</a> - A free model that replicates the Source Engine's voice chat system (most notably used in Counter-Strike and/or Garry's Mod) for Roblox.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="expandable-item">
-                    <div class="setting-row js-expand-trigger">
-                        <div class="setting-icon">
                             <img src="icons/chat.svg" alt="QNA" class="icon-img">
                         </div>
                         <div class="setting-details">
                             <div class="setting-title">Questions & Answers</div>
-                            <div class="setting-description">Inevitably, people will ask questions, so I want to get a few out of the way that I think would be the most common, so you already have an answer, in no particular order.</div>
+                            <div class="setting-description">Have a question? Check out the frequently asked questions below!</div>
                         </div>
                         <div class="chevron">
                             <img src="icons/chevron.svg" alt="Expand" class="icon-img">
@@ -226,6 +207,8 @@
                     <div class="sub-menu">
                         <div class="sub-row">
                             <div class="setting-details">
+                                <div class="setting-title">Inevitably, people will ask questions, so I want to get a few out of the way that I think would be the most common, so you already have an answer, in no particular order.</div>
+                                <br>
                                 <div class="setting-title">Do you accept friend requests on various platforms?</div>
                                 <div class="setting-description">Not really. If you see me randomly accepting for no particular reason, it's likely either a mistake, curiosity, or a resolving a certain issue.</div>
                                 <div class="setting-description">I prefer to know the person before adding them as a friend. This usually involves interacting with them in some capacity first. I'm not gonna accept your friend request if you just send it and didn't say anything.</div>
@@ -261,7 +244,7 @@
                 <div class="expandable-item">
                     <div class="setting-row js-expand-trigger">
                         <div class="setting-icon">
-                            <img src="icons/chat.svg" alt="Contact" class="icon-img">
+                            <img src="icons/wifi.svg" alt="Contact" class="icon-img">
                         </div>
                         <div class="setting-details">
                             <div class="setting-title">Frequently Active Platforms</div>
@@ -283,42 +266,42 @@
                                         <div class="setting-description">You can find me on Discord as <strong>@average_free2play</strong>. If you're planning on adding me, please state your purpose.</div>
                                     </div>
                                 </div>
-                                <div class="setting-row" onclick="window.open('https://www.youtube.com/@AverageTheTakenF2P', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/youtube.svg" alt="Youtube" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">Youtube</div>
-                                        <div class="setting-description">You can find me on Youtube as <strong>@AverageTheTakenF2P</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://x.com/Circumfraction', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/twitter.svg" alt="Twitter" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">Twitter</div>
-                                        <div class="setting-description">You can find me on Twitter as <strong>@Circumfraction</strong> (yes I'm calling it Twitter instead of X)</div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://www.roblox.com/users/3870271148/profile', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/roblox.svg" alt="Roblox" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">Roblox</div>
-                                        <div class="setting-description">You can find me on Roblox as <strong>@Average_FreeTooPlay</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://www.youtube.com/@AverageTheTakenF2P">
+                            <div class="setting-icon">
+                                <img src="icons/youtube.svg" alt="YT" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">Youtube</div>
+                                <div class="setting-description">You can find me on Youtube as <strong>@AverageTheTakenF2P</strong></div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://x.com/Circumfraction">
+                            <div class="setting-icon">
+                                <img src="icons/twitter.svg" alt="Twitter" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">Twitter</div>
+                                <div class="setting-description">You can find me on Twitter as <strong>@Circumfraction</strong></div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://www.roblox.com/users/3870271148/profile">
+                            <div class="setting-icon">
+                                <img src="icons/roblox.svg" alt="Roblox" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">Roblox</div>
+                                <div class="setting-description">You can find me on Roblox as <strong>@Average_FreeTooPlay</strong></div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
                             </div>
                         </div>
                     </div>
@@ -337,69 +320,137 @@
                         </div>
                     </div>
                     <div class="sub-menu">
-                        <div class="sub-row">
-                            <div class="setting-details">
-                                <div class="setting-row" onclick="window.open('https://www.reddit.com/user/Free_Tea4825/', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/reddit.svg" alt="Reddit" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">Reddit</div>
-                                        <div class="setting-description">Oh hey, I have a reddit account!</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://github.com/AverageFree2Play', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/github.svg" alt="GitHub" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">GitHub</div>
-                                        <div class="setting-description">And my GitHub account. With so little contributions. At certain point you may see a certain spike in activity.</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://devforum.roblox.com/u/average_freetooplay/summary', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/roblox.svg" alt="DevForum" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">DevForum</div>
-                                        <div class="setting-description">I also have an account on the Roblox DevForum. Although I haven't posted anything for a while.</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://steamcommunity.com/id/AveryTheCattieFemboy/', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/steam.svg" alt="Steam" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">Steam</div>
-                                        <div class="setting-description">You cannot forget the legendary gaming platform.</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
-                                <div class="setting-row" onclick="window.open('https://soundcloud.com/ion-too-plus', '_blank', 'noopener,noreferrer')">
-                                    <div class="setting-icon">
-                                        <img src="icons/soundcloud.svg" alt="SoundCloud" class="icon-img">
-                                    </div>
-                                    <div class="setting-details">
-                                        <div class="setting-title">SoundCloud</div>
-                                        <div class="setting-description">Hey, did you know I have a SoundCloud account? You can find my edited songs that I posted there.</strong></div>
-                                    </div>
-                                    <div class="chevron">
-                                        <img src="icons/chevron.svg" alt="Expand" class="icon-img">
-                                    </div>
-                                </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://www.reddit.com/user/Free_Tea4825/">
+                            <div class="setting-icon">
+                                <img src="icons/reddit.svg" alt="Reddit" class="icon-img">
                             </div>
+                            <div class="setting-details">
+                                <div class="setting-title">Reddit</div>
+                                <div class="setting-description">Oh hey, I have a reddit account!</div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://github.com/AverageFree2Play">
+                            <div class="setting-icon">
+                                <img src="icons/github.svg" alt="GitHub" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">GitHub</div>
+                                <div class="setting-description">And my GitHub account. With so little contributions. At certain point you may see a certain spike in activity.</div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://devforum.roblox.com/u/average_freetooplay/summary">
+                            <div class="setting-icon">
+                                <img src="icons/roblox.svg" alt="DevForum" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">DevForum</div>
+                                <div class="setting-description">I also have an account on the Roblox DevForum. Although I haven't posted anything for a while.</strong></div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://steamcommunity.com/id/AveryTheCattieFemboy/">
+                            <div class="setting-icon">
+                                <img src="icons/steam.svg" alt="Steam" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">Steam</div>
+                                <div class="setting-description">You cannot forget the legendary gaming platform.</div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+                        <div class="sub-row sub-row-clickable js-redirect-row" data-url="https://soundcloud.com/ion-too-plus">
+                            <div class="setting-icon">
+                                <img src="icons/soundcloud.svg" alt="SoundCloud" class="icon-img">
+                            </div>
+                            <div class="setting-details">
+                                <div class="setting-title">SoundCloud</div>
+                                <div class="setting-description">Hey, did you know I have a SoundCloud account? You can find my edited songs that I posted there.</div>
+                            </div>
+                            <div class="chevron-right">
+                                <img src="icons/chevron.svg" alt="Navigate" class="icon-img">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section-resources" class="tab-content" style="display: none;">
+            <h1 class="page-title">Projects</h1>
+            <p class="page-description">Here are some of my projects that I have worked on or am currently working on.</p>
+            <div class="settings-group">
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/soundwave.svg" alt="SoundWave" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">SpookSounds</div>
+                            <div class="setting-description">A .net console application that emulates the old "spooky" sounds played in the background of old horror games.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <span class="sub-row-label">Downloads</span>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/SpookSounds/releases/download/v1.0.0/spooksounds.zip', '_self', 'noopener,noreferrer')">Download</button>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/SpookSounds/archive/refs/heads/master.zip', '_self', 'noopener,noreferrer')">Download Source Code</button>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/SpookSounds/', '_blank', 'noopener,noreferrer')">View Source</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/ribbon.svg" alt="Ribbon" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Roblox Studio Old Ribbon Style UI</div>
+                            <div class="setting-description">A set of json files that emulates the old ribbon UI from Roblox Studio prior to the next-gen update.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <span class="sub-row-label">Downloads</span>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI/releases/download/v1.2.0/CustomRibbonTabs.zip', '_self', 'noopener,noreferrer')">Download</button>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI/archive/refs/heads/master.zip', '_self', 'noopener,noreferrer')">Download Source Code</button>
+                            <button class="win-btn" onclick="window.open('https://github.com/AverageFree2Play/Old-Studio-Ribbon-UI', '_blank', 'noopener,noreferrer')">View Source</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandable-item">
+                    <div class="setting-row js-expand-trigger">
+                        <div class="setting-icon">
+                            <img src="icons/volume.svg" alt="Volume" class="icon-img">
+                        </div>
+                        <div class="setting-details">
+                            <div class="setting-title">Source Engine VC for Roblox</div>
+                            <div class="setting-description">A free model that replicates the Source Engine's voice chat system (most notably used in Counter-Strike and/or Garry's Mod) for Roblox.</div>
+                        </div>
+                        <div class="chevron">
+                            <img src="icons/chevron.svg" alt="Expand" class="icon-img">
+                        </div>
+                    </div>
+                    <div class="sub-menu">
+                        <div class="sub-row">
+                            <span class="sub-row-label">Downloads</span>
+                            <button class="win-btn" onclick="window.open('https://www.roblox.com/games/132963170193254/Source-Engine-VC-UNCOPYLOCKED', '_blank', 'noopener,noreferrer')">Download</button>
+                            <button class="win-btn" onclick="window.open('https://devforum.roblox.com/t/source-engine-vc/3773868', '_blank', 'noopener,noreferrer')">View Post</button>
                         </div>
                     </div>
                 </div>
@@ -412,17 +463,7 @@
     </footer> -->
 </div>
 
-<script>
-    function switchTab(tabId) {
-        // Hide all content sections
-        document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-        // Show the selected section
-        document.getElementById('section-' + tabId).style.display = 'block';
-        // Make the tab selector active
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        document.querySelector('.nav-item[onclick="switchTab(\'' + tabId + '\')"]').classList.add('active');
-    }
-</script>
+<script src="js/base.js"></script>
 
 </body>
 </html>

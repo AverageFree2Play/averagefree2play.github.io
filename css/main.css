@@ -305,6 +305,14 @@ body {
     align-items: center;
 }
 
+/* Right Chevron Styling for Sub-row Redirects */
+.chevron-right {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+}
+
 .expandable-item.open .chevron {
     transform: rotate(90deg);
 }
@@ -334,6 +342,21 @@ body {
     font-size: 13.5px;
     color: var(--text-primary);
     flex-grow: 1;
+}
+/* Sub-row configured as a clickable button/link */
+.sub-row-clickable {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+/* Hover & Active highlight states inside sub-menu */
+.sub-row-clickable:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sub-row-clickable:active {
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 /* ---------------------------------- */
@@ -396,4 +419,82 @@ body {
 
 .win-btn:active {
     background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ---------------------------------- */
+/* Mobile Drawer Overlay Backdrop    */
+/* ---------------------------------- */
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    backdrop-filter: blur(4px);            /* Windows 11 Acrylic blur */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 99;                           /* Below sidebar, above content */
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------------------------------- */
+/* Responsive Mobile View (<= 768px)  */
+/* ---------------------------------- */
+
+@media (max-width: 768px) {
+    /* Fixed Floating Header on Mobile for the top-left menu button */
+    .mobile-header-bar {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        padding: 0 12px;
+        background-color: var(--bg-main);
+        z-index: 10;
+        border-bottom: 1px solid var(--card-border);
+    }
+
+    /* Transform sidebar into an off-screen overlay drawer */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px !important;
+        padding-top: 12px; /* Reset padding to keep hamburger aligned */
+        transform: translateX(-100%); /* Hidden off-screen */
+        transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+        z-index: 100; /* Above mobile top bar and backdrop */
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Active open drawer state (slides in whole sidebar INCLUDING its header button) */
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* Adjust main content padding to accommodate mobile top bar */
+    .main-content {
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        padding: 72px 16px 24px 16px;
+    }
+}
+
+/* Hide mobile header bar on desktop view */
+@media (min-width: 769px) {
+    .mobile-header-bar {
+        display: none;
+    }
 }
